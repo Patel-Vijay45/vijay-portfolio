@@ -1,0 +1,270 @@
+/* colors */
+
+// $primary-color:rgb(114, 177, 236);
+$primary-color:rgb(166, 196, 255);
+$seconday-color:#ff4321;
+$white:white;
+$black:black;
+
+/* fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
+$font1: 'Noto Serif',
+serif;
+;
+
+/* media */
+
+@media screen and (min-width:901px) and (max-width:1100px) {
+    body,
+    html {
+        font-size: 55%;
+    }
+    .outer-most {
+        /* service*/
+        .service {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            .box3 {
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+            .service-box {
+                .service-icon {
+                    border-radius: 50%;
+                    height: 70px;
+                    width: 70px;
+                }
+                .text {
+                    top: 50%;
+                }
+            }
+            .service-quots {
+                display: none;
+            }
+        }
+        .project {}
+        .contect {
+            .contectlink {}
+            .form {
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
+            .links {
+                width: 100%;
+                grid-column-start: 1;
+                grid-column-end: 4;
+                text-align: center;
+                div {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 50%;
+    }
+    .outer-most {
+        .navigation-outermost {
+            nav {
+                margin: 0;
+            }
+        }
+        // padding: 0;
+        .mobile-cover {
+            // display: none;
+            // opacity: 0.7;
+            position: fixed;
+            width: 100vw;
+            height: 110vh;
+            top: -15px;
+            background: white;
+            z-index: 98;
+        }
+        .navigation-outermost {
+            .triangle-up {
+                margin-left: 0;
+            }
+            nav {
+                ul {
+                    display: none;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 90px;
+                    li {
+                        // padding: 0%;
+                        margin: 20px 0;
+                        a {
+                            position: relative;
+                            font-size: 2.5rem;
+                            // border: 2px solid red;
+                        }
+                        a::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 20px;
+                            height: 20px;
+                            border-top: 2px solid $seconday-color;
+                            border-left: 2px solid $seconday-color;
+                        }
+                        a::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            width: 20px;
+                            height: 20px;
+                            border-bottom: 2px solid $seconday-color;
+                            border-right: 2px solid $seconday-color;
+                        }
+                    }
+                }
+            }
+            .mobile-nav {
+                display: flex;
+                margin-right: 4%;
+            }
+        }
+        /*HOME PAGE */
+        .home {
+            .image {
+                display: none;
+            }
+            .text {
+                width: 100%;
+            }
+            flex-direction: column;
+            .text {
+                .content {
+                    h2 {
+                        // font-size: 3rem;
+                        span {
+                            // font-size: 3.2rem;
+                        }
+                    }
+                    margin: 10% 0 0 0;
+                }
+            }
+        }
+        /*ABOUT PAGE */
+        .abouthead {
+            display: none;
+        }
+        .about {
+            margin-top: 20px;
+            flex-direction: column-reverse;
+            .aboutchild,
+            #about2 {
+                width: 100%;
+            }
+        }
+        /*service */
+        .service {
+            // display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            .service-box {
+                .service-icon {
+                    // position: static;
+                    border-radius: 50%;
+                    height: 70px;
+                    width: 70px;
+                    // left: 40%;
+                }
+                .text {
+                    top: 50%;
+                }
+            }
+            .service-quots {
+                display: none;
+            }
+            .service-text {
+                display: none;
+            }
+        }
+        /*projects */
+        .project {
+            .project-content {
+                .projects {
+                    width: 56vw;
+                }
+            }
+        }
+        .contect {
+            .contectlink {}
+            .form {
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
+            .links {
+                width: 100%;
+                grid-column-start: 1;
+                grid-column-end: 4;
+                text-align: center;
+                div {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    body,
+    html {
+        background: #000;
+    }
+    .outer-most {
+        .contect {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat( 3, 200px);
+            column-gap: 0;
+            .contectlink {
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
+            .form {
+                .form1 {
+                    .input {
+                        clear: both;
+                        width: 100%;
+                    }
+                    textarea {
+                        width: 100%;
+                        clear: both;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:450px) {
+    body,
+    html {
+        font-size: 35%;
+    }
+    .outer-most {
+        .project {
+            // overflow: scroll;
+            .project-content {
+                .projects {
+                    width: 88vw;
+                }
+            }
+        }
+        .contect {
+            .links {
+                div {
+                    margin: 8px;
+                }
+            }
+        }
+    }
+}
